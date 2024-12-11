@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Prompt", sans-serif;
+}
+
+/* stylings for the whole site */
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+img {
+    width: 100%;
+}
+.section-content { 
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+a {
+    color: white;
+}
+a:hover {
+    color:#C08552;
+}
+/* navbar styling */
+header {
+    background: #C08552;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+header .navbar {
+    display: flex; 
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .nav-logo .logo-text {
+    color: #F3E9DC;
+    font-size: 200%;
+    font-weight: bold;
+}
+.navbar .nav-menu {
+    display: flex;
+    gap: 10px;
+}
+.navbar .nav-menu  .nav-link {
+    color: #F3E9DC;
+    transition: background-color 1s ease;
+}
+.navbar .nav-menu .nav-link:hover {
+    background: #e4a56e;
+    border-radius: 5px;
+}
+.navbar :where(#menu-close-button, #menu-open-button)  {
+    display: none;
+}
+
+
+/* hero section styling */
+.hero-section{
+    background: white;
+    min-height: 100vh;
+    padding-top: 80px;
+}
+.hero-section .section-content {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    color: #895737;
+    justify-content: space-between;
+}
+.hero-section .hero-details .title{
+    font-size: 25px;
+}
+.hero-section .hero-details .subtitle {
+    font-size: 40px;
+    padding-top: 4px;
+    max-width: 110%;
+    font-weight: semibold;
+    color: #C08552;
+}
+.hero-section .hero-details .description {
+    font-size: 20px;
+    background-color: #fef2ea;
+    border-radius: 10px;
+}
+.hero-section .hero-details .buttons {
+    display: flex;
+    gap: 40px;
+    padding-top: 30px;
+}
+.hero-section .hero-details .button {
+    padding: 5px 26px;
+    margin-top: 2px;
+    color: white;
+    border: 2px solid transparent;
+    background-color: #C08552;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.8s ease;
+}
+.hero-section .hero-details .button:hover {
+    background-color: #e4a670;
+}
+.hero-section .hero-image-wrapper {
+    max-width: 500px;
+}
+
+
+    .navbar .nav-menu .nav-link {
+        color: white;
+        display: block;
+        margin-top: 17px;
+        font-size: 25px;
+    }
+
+.contact-info {
+    background-color: #e4a56e;
+    color:#ffffff;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+}
+/* quiz page */
+.question-intro {
+    padding-top: 80px;
+    padding-left: 15%;
+    padding-right: 15%;
+    text-align: center; /* Center-align intro content */
+}
+
+.question-intro h1 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #dc9c64; /* Highlighted heading color */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px #ddd; /* Subtle shadow effect */
+}
+
+.question-intro p {
+    font-size: 120%;
+    line-height: 1.5;
+    color: #895737;
+    margin-bottom: 40px;
+}
+
+.questions {
+    padding-top: 30px;
+    text-align: center;
+    font-size: 120%;
+    color: #555;
+}
+
+.question-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    border-bottom: 2px solid #e4a670;
+    margin: 20px 0;
+    padding-bottom: 20px;
+    
+}
+
+.question-list h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #dc9c64;
+    text-align: center;
+    margin: 20px 10%;
+    line-height: 1.4;
+}
+
+.question-list div {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between options */
+    margin-top: 15px;
+}
+
+.question-list label {
+    color: #794f2a;
+    font-size: 1rem;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.question-list label:hover {
+    color: #e4a670; /* Highlight on hover */
+}
+
+/* Submit Button */
+button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #C08552;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 2rem;
+}
+
+button:hover {
+    background: #ce935f;
+}
+input[type="radio"], input[type="checkbox"] {
+    appearance: none;
+    position: relative;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #555;
+    border-radius: 50%; /* Radio buttons are circular */
+    outline: none;
+    cursor: pointer;
+    margin-right: 15px; /* Spacing between input and label */
+    transition: background-color 0.7s ease, transform 0.2s ease;
+}
+input[type="checkbox"] {
+    border-radius: 4px; /* Checkbox remains square */
+}
+
+input[type="radio"]:checked, input[type="checkbox"]:checked {
+    background-color: #e4a56e; /* Checked background */
+    border-color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 0 5px #e4a670; /* Glow effect */
+}
+
+label {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #eeccae;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #e4a56e;
+    font-family: Arial, sans-serif;
+}
+
+.form-group label {
+    text-align: center;
+
+}
+
+#study-tools h3 {
+    color: #dc9c64;
+}
+
+/*about page*/
+
+.why-container {
+    display: flex;
+    padding-top: 100px;
+    padding-right: 40px;
+    padding-left: 40px;
+    align-items: center; /* Vertically aligns items */
+    gap: 20px; /* Adds spacing between the image and text */
+}
+.why-image img {
+    max-width: 200px; /* Adjust the image size */
+    height: auto;
+    border-radius: 10px; /* Optional: Add rounded corners */
+    padding-top: 50px;
+}
+.why {
+    flex: 1; /* Allows the text section to take up remaining space */
+    padding-left: 400px;
+}
+
+.why {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle card shadow */
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.why:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.great {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle card shadow */
+    padding: 10px;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.great:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+/* resources page */
+/* Resource Section */
+.resource-container {
+    padding: 50px 20px;
+    background-color: #e4a670;
+    text-align: center;
+}
+
+.resource-wrapper {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.resource-heading h1 {
+    font-size: 2.5rem;
+    color: #F3E9DC;
+    margin-bottom: 20px;
+}
+
+.resources {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card Styling */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle card shadow */
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card i {
+    font-size: 2rem;
+    color: #895737;
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card li {
+    margin-bottom: 10px;
+}
+
+.card a {
+    color: #007bff; /* Link blue */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.card a:hover {
+    color: #0056b3; /* Darker blue */
+}
+
+

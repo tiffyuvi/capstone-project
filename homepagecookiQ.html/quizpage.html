@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .quiz-divider {
+    height: 30px;
+}
+
+section {
+    text-align: center;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar section-content">
+            <a href="#" class="nav-logo">
+                <h2 class="logo-text">CookiQ</h2>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="draft2cookiq.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+            
+                <li class="nav-item">
+                    <a href="resources.html" class="nav-link">Resources</a> 
+                </li>
+
+                
+            </ul>
+        </nav>
+    </header>
+    <div class="questions">
+        <div class="question-intro">
+            <h1>Get your mittens on!</h1>
+            <p>We will need information about your tastes and cooking experience before providing a personalized and insightful recipe to satiate your appetite for good grades.</p>
+        </div>
+        <hr class="quiz-divider">
+        <section class="question-list">
+            <form id="quizForm" onsubmit="sendMail(); return false;">
+                <h2>Do you cook (study) for extended periods of time or short sessions with breaks? How much time do you allot per session?</h2>
+                
+                <div>
+                    <input type="radio" id="q1a" name="q1" value="2hrs" required>
+                    <label for="q1a">I like to finish everything in one go (2+ hrs)</label>
+                </div>
+                <div>
+                    <input type="radio" id="q1b" name="q1" value="1hr" required>
+                    <label for="q1b">I focus for 1-hour sessions with a break</label>
+                </div>
+                <div>
+                    <input type="radio" id="q1c" name="q1" value="20min" required>
+                    <label for="q1c">I don’t sit still for long, and like to refresh my brain before moving on to the next recipe (20 mins)</label>
+                </div>
+
+                <h2>Which cooking utensil is your go-to? (choose all that apply)</h2>
+                
+                <div>
+                    <input type="checkbox" id="q2a" name="q2[]" value="reading">
+                    <label for="q2a">Reading my recipes (notes) repeatedly</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q2b" name="q2[]" value="notes">
+                    <label for="q2b">Writing and rewriting my notes</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q2c" name="q2[]" value="videos">
+                    <label for="q2c">Watch tutorial videos online</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q2d" name="q2[]" value="asking">
+                    <label for="q2d">Asking my peers and teachers</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q2e" name="q2[]" value="flashcards">
+                    <label for="q2e">Flashcards</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q2f" name="q2[]" value="mindmaps">
+                    <label for="q2f">Mind maps/diagrams</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q2g" name="q2[]" value="problems">
+                    <label for="q2g">Practice problems</label>
+                </div>
+
+                <h2>You memorize recipes (information) better when… </h2>
+                
+                <div> 
+                    <input type="checkbox" id="q3a" name="q3[]" value="discuss">
+                    <label for="q3a">You discuss it with someone</label>
+                </div>
+                <div> 
+                    <input type="checkbox" id="q3b" name="q3[]" value="write">
+                    <label for="q3b">Write it down (kinesthetic/reading-writing)</label>
+                </div>
+                <div> 
+                    <input type="checkbox" id="q3c" name="q3[]" value="see">
+                    <label for="q3c">See it visually (diagrams, mind maps)</label>
+                </div>
+                <div> 
+                    <input type="checkbox" id="q3d" name="q3[]" value="listen">
+                    <label for="q3d">Listen to someone read it (auditory)</label>
+                </div>
+                <div> 
+                    <input type="checkbox" id="q3e" name="q3[]" value="hands">
+                    <label for="q3e">You work with your hands (kinesthetic/active learning)</label>
+                </div>
+                <h2> What's the toughest thing you encounter in the kitchen?</h2>
+                <div> 
+                    <input type="radio" id="q4a" name="q4[]" value="stem">
+                    <label for="q4a">STEM recipes (chemistry, math, physics, biology, etc.)</label>
+                </div>
+                <div> 
+                    <input type="radio" id="q4b" name="q4[]" value="humanities">
+                    <label for="q4b">Humanities recipes (law, social studies, economics, psychology, etc.)
+                    </label>
+                </div>
+                <div> 
+                    <input type="radio" id="q4c" name="q4[]" value="writing">
+                    <label for="q4c">Writing recipes (essays) or large projects
+                    </label>
+                </div>
+                <div> 
+                    <input type="radio" id="q4d" name="q4[]" value="orders">
+                    <label for="q4d">Managing many orders (assignments at once)
+                    </label>
+                </div>
+                <h2>What's the toughest thing you encounter as a chef?</h2>
+                <div>
+                    <input type="radio" id="q5a" name="q5" value="procrastinate" required>
+                    <label for="q5a">Putting cooking off for too long (procrastination)</label>
+                </div>
+                <div>
+                    <input type="radio" id="q5b" name="q5" value="overwhelmed">
+                    <label for="q5b">Feeling overwhelmed by all the orders (assignments) I must do</label>
+                </div>
+                <div>
+                    <input type="radio" id="q5c" name="q5" value="self-doubt">
+                    <label for="q5c">Feeling like my cooking/food is never good enough</label>
+                </div>
+                <div>
+                    <input type="radio" id="q5d" name="q5" value="distraction">
+                    <label for="q5d">Losing focus and getting distracted</label>
+                </div>
+                <div>
+                    <input type="radio" id="q5e" name="q5" value="time-management">
+                    <label for="q5e">Feeling like I never have enough time</label>
+                </div>
+                
+                <h2>What's your favorite way to start cooking (studying)?</h2>
+                <div>
+                    <input type="radio" id="q6a" name="q6" value="prep-ingredients" required>
+                    <label for="q6a">Preparing all the ingredients first (organizing my notes)</label>
+                </div>
+                <div>
+                    <input type="radio" id="q6b" name="q6" value="dive-in">
+                    <label for="q6b">Diving right in and adjusting as I go (starting with practice questions)</label>
+                </div>
+                <div>
+                    <input type="radio" id="q6c" name="q6" value="warm-up">
+                    <label for="q6c">Doing a warm-up task first (quick review before studying)</label>
+                </div>
+                <div>
+                    <input type="radio" id="q6d" name="q6" value="schedule">
+                    <label for="q6d">Making a study schedule (planning out study sessions)</label>
+                </div>
+                
+                <h2>Do you like to experiment with your recipes (study methods)?</h2>
+                <div>
+                    <input type="radio" id="q7a" name="q7" value="same-method" required>
+                    <label for="q7a">I stick to the same methods because they work</label>
+                </div>
+                <div>
+                    <input type="radio" id="q7b" name="q7" value="try-different">
+                    <label for="q7b">I try different methods until I find the best one</label>
+                </div>
+                <div>
+                    <input type="radio" id="q7c" name="q7" value="feedback">
+                    <label for="q7c">I ask for feedback from others to improve</label>
+                </div>
+                <div>
+                    <input type="radio" id="q7d" name="q7" value="new-techniques">
+                    <label for="q7d">I look for new study tips and techniques regularly</label>
+                </div>
+                
+                <h2>How do you handle mistakes in your recipe (study)?</h2>
+                <div>
+                    <input type="checkbox" id="q8a" name="q8[]" value="self-review">
+                    <label for="q8a">I review what went wrong and try to fix it on my own</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q8b" name="q8[]" value="ask-help">
+                    <label for="q8b">I ask for help from a teacher or friend</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q8c" name="q8[]" value="frustrated">
+                    <label for="q8c">I feel frustrated but try to push through</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="q8d" name="q8[]" value="move-on">
+                    <label for="q8d">I prefer to move on and come back to it later</label>
+                </div>
+                
+                <h2>What motivates you the most to keep cooking?</h2>
+                <div>
+                    <input type="radio" id="q9a" name="q9" value="mastery" required>
+                    <label for="q9a">Knowing that I’ll master the material</label>
+                </div>
+                <div>
+                    <input type="radio" id="q9b" name="q9" value="small-goals">
+                    <label for="q9b">Reaching small goals along the way</label>
+                </div>
+                <div>
+                    <input type="radio" id="q9c" name="q9" value="feedback">
+                    <label for="q9c">Getting feedback or positive reinforcement</label>
+                </div>
+                <div>
+                    <input type="radio" id="q9d" name="q9" value="accomplishment">
+                    <label for="q9d">The sense of accomplishment after finishing</label>
+                </div>
+                
+                <h2>What time of the day do you cook best?</h2>
+                <div>
+                    <input type="radio" id="q10a" name="q10" value="early-morning" required>
+                    <label for="q10a">Early mornings</label>
+                </div>
+                <div>
+                    <input type="radio" id="q10b" name="q10" value="afternoon">
+                    <label for="q10b">Afternoons</label>
+                </div>
+                <div>
+                    <input type="radio" id="q10c" name="q10" value="evening">
+                    <label for="q10c">Evenings</label>
+                </div>
+                <div>
+                    <input type="radio" id="q10d" name="q10" value="late-night">
+                    <label for="q10d">Late nights</label>
+                </div>
+                <h2>How do you handle cooking under pressure (studying close to deadlines)?</h2>
+        <div>
+            <input type="radio" id="q11a" name="q11" value="stress-organize" required>
+            <label for="q11a">I organize everything to stay calm</label>
+        </div>
+        <div>
+            <input type="radio" id="q11b" name="q11" value="stress-focus">
+            <label for="q11b">I focus on one dish (task) at a time</label>
+        </div>
+        <div>
+            <input type="radio" id="q11c" name="q11" value="stress-panic">
+            <label for="q11c">I tend to panic but try my best</label>
+        </div>
+        <div>
+            <input type="radio" id="q11d" name="q11" value="stress-thrive">
+            <label for="q11d">I actually thrive under pressure</label>
+        </div>
+
+        <h2>If you could have one superpower in the kitchen (studying), what would it be?</h2>
+        <div>
+            <input type="radio" id="q12a" name="q12" value="memorize" required>
+            <label for="q12a">Instant memorization of recipes (information)</label>
+        </div>
+        <div>
+            <input type="radio" id="q12b" name="q12" value="focus">
+            <label for="q12b">Unbreakable focus</label>
+        </div>
+        <div>
+            <input type="radio" id="q12c" name="q12" value="energy">
+            <label for="q12c">Endless energy for cooking (studying)</label>
+        </div>
+        <div>
+            <input type="radio" id="q12d" name="q12" value="speed">
+            <label for="q12d">The ability to cook (study) at lightning speed</label>
+        </div>
+
+        <h2>What’s your least favorite part of the cooking process (study process)?</h2>
+        <div>
+            <input type="radio" id="q13a" name="q13" value="prep" required>
+            <label for="q13a">Preparing ingredients (organizing notes)</label>
+        </div>
+        <div>
+            <input type="radio" id="q13b" name="q13" value="cleanup">
+            <label for="q13b">Cleaning up afterward (reviewing and revising)</label>
+        </div>
+        <div>
+            <input type="radio" id="q13c" name="q13" value="waiting">
+            <label for="q13c">Waiting for dishes to cook (waiting for results)</label>
+        </div>
+        <div>
+            <input type="radio" id="q13d" name="q13" value="taste-test">
+            <label for="q13d">Taste-testing (self-assessing progress)</label>
+        </div>
+        <h2>When you’re overwhelmed with studying (or cooking), what’s your go-to strategy to stay on track?</h2>
+        <div>
+            <input type="radio" id="q14a" name="q14" value="breaks" required>
+            <label for="q14a">Take short breaks to refresh</label>
+        </div>
+        <div>
+            <input type="radio" id="q14b" name="q14" value="plan">
+            <label for="q14b">Revisit my plan and adjust my timeline</label>
+        </div>
+        <div>
+            <input type="radio" id="q14c" name="q14" value="delegate">
+            <label for="q14c">Delegate tasks or ask for help</label>
+        </div>
+        <div>
+            <input type="radio" id="q14d" name="q14" value="push-through">
+            <label for="q14d">Power through until it’s done</label>
+        </div>
+        
+        <h2>How do you feel about experimenting with new study methods or recipes?</h2>
+        <div>
+            <input type="radio" id="q15a" name="q15" value="eager" required>
+            <label for="q15a">I’m eager to try new methods and approaches</label>
+        </div>
+        <div>
+            <input type="radio" id="q15b" name="q15" value="cautious">
+            <label for="q15b">I’m cautious but open to new ideas</label>
+        </div>
+        <div>
+            <input type="radio" id="q15c" name="q15" value="comfortable">
+            <label for="q15c">I prefer sticking to what I know works</label>
+        </div>
+        <div>
+            <input type="radio" id="q15d" name="q15" value="adventurous">
+            <label for="q15d">I love experimenting and seeing what works</label>
+        </div>
+        <h2>What study tools do you currently use the most (e.g., books, flashcards, apps, etc.)?</h2>
+<textarea id="study-tools" name="study-tools" rows="4" cols="50" required></textarea>
+    <h2>Is there anything else that you feel would help me understand your study habits or preferences better?</h2>
+    <text area id="extra-info" name="extra-info" rows="4" cols="50"></textarea>
+    <h3> How do you expect your waiter to behave when serving you your meal and explaining the recipe?</h3>
+<div>
+    <input type="radio" id="q16a" name="q16" value="attentive" required>
+    <label for="q16a">I expect my waiter to be attentive, offering any needed details and ensuring everything is to my liking.</label>
+</div>
+<div>
+    <input type="radio" id="q16b" name="q16" value="friendly">
+    <label for="q16b">I appreciate a friendly waiter who is happy to explain the recipe and make small talk while serving the meal.</label>
+</div>
+<div>
+    <input type="radio" id="q16c" name="q16" value="professional">
+    <label for="q16c">I prefer a professional waiter who provides a clear and efficient explanation of the recipe, then steps back to let me enjoy the meal.</label>
+</div>
+<div>
+    <input type="radio" id="q16d" name="q16" value="enthusiastic">
+    <label for="q16d">I like a waiter who is enthusiastic about the dish, excited to explain the recipe, and shares interesting facts or details about the food.</label>
+</div>
+<div>
+    <input type="radio" id="q16e" name="q16" value="brief">
+    <label for="q16e">I prefer a brief explanation, just enough to know what’s on my plate without too much detail—straight to the point!</label>
+</div>
+
+
+
+
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
